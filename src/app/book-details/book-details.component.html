@@ -1,0 +1,11 @@
+<h3 class="text-center">Book Details</h3>
+<div class="col-md-12" *ngIf="book">
+   <div class="col-md-4">
+        <img [src]="[book.img]" alt="Android" class="img-thumbnail" style="height:150px;margin-bottom:20px;">
+   </div> 
+   <div class="com-md-8">
+    <h4><a> {{ book.name }} book</a></h4>   
+    <p> {{book.desc}} </p>
+    <button class="btn btn-success" (click)="addToCart(book)" routerLink="/cart">Buy</button>
+   </div>
+</div>

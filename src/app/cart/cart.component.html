@@ -1,0 +1,8 @@
+<h3>Cart</h3>
+<button class="btn btn-xs btn-danger" (click)="clearCart()"> Clear All</button>
+<div class="cart-item" *ngFor="let item of items; index as clrId">
+  {{clrId}}
+  <span>{{ item.name }}</span>
+  <span>{{ item.price | currency }}</span>
+
+</div>

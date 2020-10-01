@@ -1,0 +1,16 @@
+<h3 class="text-center">Book List</h3>
+<div class="col-md-12" *ngFor="let book of books; index as bookId" >
+  <div class="col-md-4">
+        <img [src]="book.img" [title]="book.name + ' Details'" class="img-thumbnail" style="height:150px;margin-bottom:20px;">
+  </div>
+  <div class="col-md-8">
+    <h4><a [routerLink]="['/bookdetails',bookId]"> {{ book.name }} book</a></h4>
+    <p>Rs. {{ book.price }} /-</p>
+    <p *ngIf="book.quantity > 0"> Quantity : {{book.quantity}} </p>
+    <div *ngIf="book.desc">
+      <p><b>Description :</b></p>
+      <p> {{book.desc}} </p>
+    </div>
+    <app-book-alerts [bookinput]='book' (notify)="onNotify()" (share)="onShare()"></app-book-alerts>
+  </div>
+</div>
